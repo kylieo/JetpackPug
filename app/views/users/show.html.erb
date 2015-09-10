@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="wrapper">
+
+<!-- 	<p id="notice"><%= notice %></p> -->
+
+	<div class="title"></div>
+
+	<% if @current_user %>
+	  <!-- SOMEONE IS ACTUALLY LOGGED IN -->
+
+	<!--   <%= @current_user.email %> -->
+	  <h2><%= (" Hi #{ @current_user.user_name } ") %></h2>
+	<% end %>
+</div>

@@ -18,21 +18,10 @@ Rails.application.routes.draw do
 
   get 'new/update'
 
-  get 'users/new'
+  resources :users
+  resource :session
 
-  get 'users/create'
-
-  get 'users/update'
-
-  get 'users/edit'
-
-  get 'users/destroy'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  devise_for :users
+  # devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
