@@ -29,7 +29,7 @@ JetpackPug.Preloader.prototype = {
     this.load.setPreloadSprite(this.preloadBar);
 
    
-    //this.load.image('start', 'assets/images/start.png');
+    // this.load.image('start', 'assets/images/start.png');
 
     //load font
     this.load.bitmapFont('minecraftia', '<%= font_path "minecraftia/minecraftia.png" %>', '<%= font_path "minecraftia/minecraftia.xml" %>');
@@ -42,7 +42,7 @@ JetpackPug.Preloader.prototype = {
     this.load.image('midground', '<%= image_path "tiles/midground.png" %>');
 
     // this.load.atlas('player', '<%= image_path "jetpack-spritesheet.png" %>', '<%= image_path "jetpack-spritesheet-definition.json" %>');
-    // this.load.atlas('coin', '<%= image_path "coin-spritesheet.png" %>', '<%= image_path "coin-spritesheet-definition.json" %>');
+    this.load.atlas('coin', '<%= image_path "coin-spritesheet.png" %>', '<%= image_path "coin-spritesheet-definition.json" %>');
 
     // food
     this.load.image('banana', '<%= image_path "banana.png" %>');
@@ -52,6 +52,10 @@ JetpackPug.Preloader.prototype = {
 
     // player
     this.load.image('player_fly', '<%= image_path "fly1.png" %>');
+
+    // coins
+
+    // this.load.atlas('coin', '<%= image_path "coin-spritesheet.png" %>', '<%= "coin-spritesheet-definition.json" %>');
 
 
 // dead1

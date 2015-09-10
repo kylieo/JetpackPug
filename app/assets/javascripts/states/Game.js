@@ -13,6 +13,11 @@ JetpackPug.Game = function (game) {
   this.previousCoinType = null;
   this.foodSpacingX = 10;
   this.foodSpacingY = 10;
+  this.previousCoinType = null;
+  this.coinSpacingX = 10;
+  this.coinSpacingY = 10;
+  this.coinRate = 1000; // generates coin every 1 second
+  this.coinTimer = 0; // checked every game loop to see if we created coin
   this.spawnX = null;
 };
 
@@ -85,6 +90,9 @@ JetpackPug.Game.prototype = {
     // create a food spawn loop
     this.foodGenerator = this.game.time.events.loop(Phaser.Timer.SECOND, this.generateFood, this);
     this.foodGenerator.timer.start();
+     // create a coin spawn loop
+    this.coinGenerator = this.game.time.events.loop(Phaser.Timer.SECOND, this.generateCoins, this);
+    this.coinGenerator.timer.start();
 
 
     // instantiate music
@@ -128,10 +136,17 @@ JetpackPug.Game.prototype = {
           this.player.angle += 0.5;
         }
       }
+
+      if(this.coinTimer < this.game.time.now) {
+        this.createCoin();
+        this.coinTimer = game.time.now + this.coinRate;
+      }
+
       this.shadow.scale.setTo(this.player.y / this.game.height);
       this.game.physics.arcade.collide(this.player, this.ground, this.groundHit, null, this);
       this.game.physics.arcade.overlap(this.player, this.food, this.foodHit, null, this);
       this.game.physics.arcade.overlap(this.player, this.enemies, this.enemyHit, null, this);
+
 
     } else {
       this.game.physics.arcade.collide(this.player, this.ground);
@@ -142,6 +157,7 @@ JetpackPug.Game.prototype = {
     //this.food.destroy();
     this.enemies.destroy(); // removes references to enemies in memory (garbage collected)
     // this.scoreboard.destroy();
+    this.coins.destroy();
     this.score = 0;
     this.coinTimer = 0;
     this.enemyTimer = 0;
@@ -163,6 +179,79 @@ JetpackPug.Game.prototype = {
 
     enemy.reset(x, y);
     enemy.revive();
+  },
+  generateCoins: function() {
+    if(!this.previousCoinType || this.previousCoinType < 3) {
+      var coinType = this.game.rnd.integer() % 5;
+      switch(coinType) {
+        case 0:
+          //do nothing. No coins generated
+          break;
+        case 1:
+        case 2:
+          // if the cointype is 1 or 2, create a single coin
+          //this.createCoin();
+          this.createCoin();
+
+          break;
+        case 3:
+          // create a small group of coins
+          this.createCoinGroup(2, 2);
+          break;
+        case 4:
+          //create a large coin group
+          this.createCoinGroup(6, 2);
+          break;
+        default:
+          // if somehow we error on the cointype, set the previouscointype to zero and do nothing
+          this.previousCoinType = 0;
+          break;
+      }
+
+      this.previousCoinType = coinType;
+    } else {
+      if(this.previousCoinType === 4) {
+        // the previous coin generated was a large group, 
+        // skip the next generation as well
+        this.previousCoinType = 3;
+      } else {
+        this.previousCoinType = 0;  
+      }
+      
+    }
+  },
+  // creates memory recycling
+  createCoin: function(x, y) {
+    x = x ||  this.spawnX;
+    y = y || this.game.rnd.integerInRange(50, this.game.world.height - 192);
+    // check for coin recycling
+    var coin = this.coins.getFirstExists(false);
+    if(!coin) {
+      // create new coin instantiation if coin doesn't exist
+      coin = new Coin(this.game, 0, 0, 'coin');
+      this.coins.add(coin);
+    }
+    // set coin position and possible health parameter if using, not used here
+    coin.reset(x, y);
+    coin.revive();
+    return coin;
+  },
+  createCoinGroup: function(columns, rows) {
+    //create 4 coins in a group
+    var coinSpawnY = this.game.rnd.integerInRange(50, this.game.world.height - 192);
+    var coinRowCounter = 0;
+    var coinColumnCounter = 0;
+    var coin;
+    for(var i = 0; i < columns * rows; i++) {
+      coin = this.createCoin(this.spawnX, coinSpawnY);
+      coin.x = coin.x + (coinColumnCounter * coin.width) + (coinColumnCounter * this.coinSpacingX);
+      coin.y = coin.y + (coinRowCounter * coin.height) + (coinRowCounter * this.coinSpacingY);
+      coinColumnCounter++;
+      if(i+1 >= columns && (i+1) % columns === 0) {
+        coinRowCounter++;
+        coinColumnCounter = 0;
+      } 
+    }
   },
   generateFood: function() {
     // if(!this.previousFoodType || this.previousFoodType < 3) {
@@ -239,6 +328,23 @@ JetpackPug.Game.prototype = {
     this.player.angle = 0;
     this.player.body.velocity.y = -200;
     this.bounceSound.play();
+  },
+
+  coinHit: function(player, coin) {
+    this.score++;
+
+    coin.kill();
+    this.coinSound.play('',0,0.25);
+    
+    var scoreCoin = new Coin(this.game, coin.x, coin.y);
+    this.game.add.existing(scoreCoin);
+    scoreCoin.animations.play('spin', 40, true);
+    var scoreTween = this.game.add.tween(scoreCoin).to({x: 50, y: 50}, 300, Phaser.Easing.Linear.None, true);
+    scoreTween.onComplete.add(function() {
+      scoreCoin.destroy();
+      this.scoreText.text = 'Score: ' + this.score;
+    }, this);
+    
   },
 
   foodHit: function(player, food) {
