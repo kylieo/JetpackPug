@@ -1,0 +1,117 @@
+{
+
+    "frames":
+    [
+        
+        {
+            "filename": "a1.png",
+            "frame": {"x":0,"y":0,"w":359,"h":313},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":359,"h":313},
+            "spriteOffset": {"x":-16, "y":49},
+            "spriteSize": {"w":359, "h":313}
+        },
+        {
+            "filename": "a2.png",
+            "frame": {"x":361,"y":0,"w":381,"h":313},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":381,"h":313},
+            "spriteOffset": {"x":-5, "y":49},
+            "spriteSize": {"w":381, "h":313}
+        },
+        {
+            "filename": "a3.png",
+            "frame": {"x":744,"y":0,"w":395,"h":313},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":395,"h":313},
+            "spriteOffset": {"x":2, "y":49},
+            "spriteSize": {"w":395, "h":313}
+        },
+        {
+            "filename": "a4.png",
+            "frame": {"x":1141,"y":0,"w":363,"h":365},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":363,"h":365},
+            "spriteOffset": {"x":-14, "y":23},
+            "spriteSize": {"w":363, "h":365}
+        },
+        {
+            "filename": "a5.png",
+            "frame": {"x":1506,"y":0,"w":349,"h":411},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":349,"h":411},
+            "spriteOffset": {"x":-21, "y":-0},
+            "spriteSize": {"w":349, "h":411}
+        },
+        {
+            "filename": "a6.png",
+            "frame": {"x":0,"y":413,"w":363,"h":365},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":363,"h":365},
+            "spriteOffset": {"x":-14, "y":23},
+            "spriteSize": {"w":363, "h":365}
+        },
+        {
+            "filename": "a7.png",
+            "frame": {"x":365,"y":413,"w":395,"h":313},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":395,"h":313},
+            "spriteOffset": {"x":2, "y":49},
+            "spriteSize": {"w":395, "h":313}
+        },
+        {
+            "filename": "a8.png",
+            "frame": {"x":762,"y":413,"w":383,"h":313},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":405,"h":423},
+            "sourceSize": {"w":405,"h":423},
+            "spriteColorRect": {"x":7,"y":6,"w":383,"h":313},
+            "spriteOffset": {"x":-4, "y":49},
+            "spriteSize": {"w":383, "h":313}
+        }
+    ],
+
+    "meta":
+    {
+
+        "app": "http://zwoptexapp.com",
+        "version": "1.6.0",
+        "image": "angel_default.png",
+        "size": {"w":2048,"h":2048},
+        "name": "angel",
+        "premultipliedAlpha": false,
+        "target": {
+            "name": "default",
+            "textureFileName": "angel_default",
+            "textureFileExtension": ".png",
+            "coordinatesFileName": "angel_default",
+            "coordinatesFileExtension": ".json",
+            "premultipliedAlpha": false
+        },
+        "scale": "1"
+
+    }
+
+}

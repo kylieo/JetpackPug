@@ -1,0 +1,117 @@
+{
+
+    "frames":
+    [
+        
+        {
+            "filename": "a1.png",
+            "frame": {"x":0,"y":0,"w":353,"h":290},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":353,"h":290},
+            "spriteOffset": {"x":-13, "y":51},
+            "spriteSize": {"w":353, "h":290}
+        },
+        {
+            "filename": "a2.png",
+            "frame": {"x":355,"y":0,"w":375,"h":290},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":375,"h":290},
+            "spriteOffset": {"x":-2, "y":51},
+            "spriteSize": {"w":375, "h":290}
+        },
+        {
+            "filename": "a3.png",
+            "frame": {"x":732,"y":0,"w":389,"h":290},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":389,"h":290},
+            "spriteOffset": {"x":5, "y":51},
+            "spriteSize": {"w":389, "h":290}
+        },
+        {
+            "filename": "a4.png",
+            "frame": {"x":1123,"y":0,"w":355,"h":350},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":355,"h":350},
+            "spriteOffset": {"x":-12, "y":21},
+            "spriteSize": {"w":355, "h":350}
+        },
+        {
+            "filename": "a5.png",
+            "frame": {"x":1480,"y":0,"w":343,"h":394},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":343,"h":394},
+            "spriteOffset": {"x":-18, "y":-1},
+            "spriteSize": {"w":343, "h":394}
+        },
+        {
+            "filename": "a6.png",
+            "frame": {"x":0,"y":396,"w":355,"h":350},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":355,"h":350},
+            "spriteOffset": {"x":-12, "y":21},
+            "spriteSize": {"w":355, "h":350}
+        },
+        {
+            "filename": "a7.png",
+            "frame": {"x":357,"y":396,"w":389,"h":290},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":389,"h":290},
+            "spriteOffset": {"x":5, "y":51},
+            "spriteSize": {"w":389, "h":290}
+        },
+        {
+            "filename": "a8.png",
+            "frame": {"x":748,"y":396,"w":375,"h":290},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":411,"h":402},
+            "sourceSize": {"w":411,"h":402},
+            "spriteColorRect": {"x":16,"y":5,"w":375,"h":290},
+            "spriteOffset": {"x":-2, "y":51},
+            "spriteSize": {"w":375, "h":290}
+        }
+    ],
+
+    "meta":
+    {
+
+        "app": "http://zwoptexapp.com",
+        "version": "1.6.0",
+        "image": "demon_default.png",
+        "size": {"w":2048,"h":2048},
+        "name": "demon",
+        "premultipliedAlpha": false,
+        "target": {
+            "name": "default",
+            "textureFileName": "demon_default",
+            "textureFileExtension": ".png",
+            "coordinatesFileName": "demon_default",
+            "coordinatesFileExtension": ".json",
+            "premultipliedAlpha": false
+        },
+        "scale": "1"
+
+    }
+
+}

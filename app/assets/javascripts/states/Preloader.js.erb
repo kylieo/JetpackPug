@@ -1,0 +1,108 @@
+
+'use strict';
+JetpackPug.Preloader = function (game) {
+
+  this.background = null;
+  this.preloadBar = null;
+  this.ready = false;
+
+};
+
+
+JetpackPug.Preloader.prototype = {
+
+  preload: function () {
+
+    //  These are the assets we loaded in Boot.js
+    //  A nice logo and a loading progress bar
+    this.background = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'splash');
+    this.background.anchor.setTo(0.5, 0.5);
+    this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY + 128, 'preloaderBar');
+    this.preloadBar.anchor.setTo(0.5, 0.5);
+
+    //  This sets the preloadBar sprite as a loader sprite.
+    //  What that does is automatically crop the sprite from 0 to full-width
+    //  as the files below are loaded in.
+    this.load.setPreloadSprite(this.preloadBar);
+
+   
+    //this.load.image('start', 'assets/images/start.png');
+
+    //load font
+    this.load.bitmapFont('minecraftia', '<%= font_path "minecraftia/minecraftia.png" %>', '<%= font_path "minecraftia/minecraftia.xml" %>');
+
+    
+    this.load.image('ground', '<%= image_path "tiles/ground.png" %>');
+    this.load.image('shadow', '<%= image_path "shadow.png" %>');
+    this.load.image('background', '<%= image_path "tiles/background-full.png" %>');
+    this.load.image('foreground', '<%= image_path "tiles/foreground.png" %>');
+    this.load.image('midground', '<%= image_path "tiles/midground.png" %>');
+
+    this.load.atlas('player', '<%= image_path "jetpack-spritesheet.png" %>', '<%= image_path "jetpack-spritesheet-definition.json" %>');
+    this.load.atlas('coin', '<%= image_path "coin-spritesheet.png" %>', '<%= image_path "coin-spritesheet-definition.json" %>');
+
+    // food
+    this.load.image('banana', '<%= image_path "banana.png" %>');
+    this.load.image('chicken', '<%= image_path "chicken.png" %>');
+    this.load.image('pizza', '<%= image_path "pizza.png" %>');
+    this.load.image('doughnut', '<%= image_path "doughnut.png" %>');
+
+
+// dead1
+// dead2
+// fly1
+// fly2
+// hit1a
+// hit2a
+// invincible1.png
+// invincible2.png
+
+
+
+              
+
+    //Asteroids
+    // this.load.image('smallAsteroid', "object_asteroid_01.png");
+    // this.load.image('mediumAsteroid', "object_asteroid_02.png");
+    // this.load.image('largeAsteroid', "object_asteroid_03.png");
+
+    this.load.audio('gameMusic', ['<%= audio_path "Pamgaea.mp3" %>', '<%= audio_path "Pamgaea.ogg" %>']);
+    this.load.audio('flap', '<%= audio_path "rocket.wav" %>');
+    this.load.audio('bounce', '<%= audio_path "bounce.wav" %>');
+    this.load.audio('coin', '<%= audio_path "coin.wav" %>');
+    this.load.audio('death', '<%= audio_path "death.wav" %>');
+
+
+    this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
+
+  },
+
+  create: function () {
+
+    //  Once the load has finished we disable the crop because we're going to sit in the update loop for a short while as the music decodes
+    this.preloadBar.cropEnabled = false;
+
+  },
+
+  update: function () {
+
+    //  You don't actually need to do this, but I find it gives a much smoother game experience.
+    //  Basically it will wait for our audio file to be decoded before proceeding to the MainMenu.
+    //  You can jump right into the menu if you want and still play the music, but you'll have a few
+    //  seconds of delay while the mp3 decodes - so if you need your music to be in-sync with your menu
+    //  it's best to wait for it to decode here first, then carry on.
+    
+    //  If you don't have any music in your game then put the game.state.start line into the create function and delete
+    //  the update function completely.
+    
+    if (this.cache.isSoundDecoded('gameMusic') && this.ready == true)
+    {
+      this.state.start('MainMenu');
+    }
+
+  },
+  onLoadComplete: function() {
+    this.ready = true;
+  }
+
+};

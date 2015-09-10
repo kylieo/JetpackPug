@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GameApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-	<% end %>
-</head>
-<body>
+	<head>
+	  <title>GameApp</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-  <% if notice %>
-	  <p class="alert alert-success"><%= notice %></p>
-	<% end %>
-	<% if alert %>
-	  <p class="alert alert-danger"><%= alert %></p>
+	<nav>
+	  <%= link_to 'Home', '/' %>
+	  <% if @current_user.present? %>
+	    <%= link_to "Edit profile", users_edit_path %>
+	    <%= link_to "Logout #{ @current_user.name }", destroy_user_session_path, :method => 'delete', :data => { :confirm => 'Are you sure you wish to logout?' } %>
+	  <% else %>
+	    <%= link_to 'Create Account', users_new_path %>
+	    <%= link_to 'Login', new_user_session_path %>
+	  <% end %>
+	</nav>
+	<%= yield %>
 
-<%= yield %>
-
-</body>
+	</body>
 </html>

@@ -1,0 +1,106 @@
+{
+
+    "frames":
+    [
+        
+        {
+            "filename": "kenney01_01.png",
+            "frame": {"x":0,"y":0,"w":51,"h":51},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":51,"h":51},
+            "sourceSize": {"w":51,"h":51},
+            "spriteColorRect": {"x":0,"y":0,"w":51,"h":51},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":51, "h":51}
+        },
+        {
+            "filename": "kenney02_02.png",
+            "frame": {"x":53,"y":0,"w":42,"h":51},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":42,"h":51},
+            "sourceSize": {"w":42,"h":51},
+            "spriteColorRect": {"x":0,"y":0,"w":42,"h":51},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":42, "h":51}
+        },
+        {
+            "filename": "kenney03_03.png",
+            "frame": {"x":97,"y":0,"w":29,"h":51},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":29,"h":51},
+            "sourceSize": {"w":29,"h":51},
+            "spriteColorRect": {"x":0,"y":0,"w":29,"h":51},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":29, "h":51}
+        },
+        {
+            "filename": "kenney04_04.png",
+            "frame": {"x":128,"y":0,"w":9,"h":50},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":9,"h":50},
+            "sourceSize": {"w":9,"h":50},
+            "spriteColorRect": {"x":0,"y":0,"w":9,"h":50},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":9, "h":50}
+        },
+        {
+            "filename": "kenney05_05.png",
+            "frame": {"x":139,"y":0,"w":29,"h":51},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":29,"h":51},
+            "sourceSize": {"w":29,"h":51},
+            "spriteColorRect": {"x":0,"y":0,"w":29,"h":51},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":29, "h":51}
+        },
+        {
+            "filename": "kenney06_06.png",
+            "frame": {"x":170,"y":0,"w":42,"h":51},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":42,"h":51},
+            "sourceSize": {"w":42,"h":51},
+            "spriteColorRect": {"x":0,"y":0,"w":42,"h":51},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":42, "h":51}
+        },
+        {
+            "filename": "kenney07_07.png",
+            "frame": {"x":0,"y":53,"w":51,"h":51},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":51,"h":51},
+            "sourceSize": {"w":51,"h":51},
+            "spriteColorRect": {"x":0,"y":0,"w":51,"h":51},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":51, "h":51}
+        }
+    ],
+
+    "meta":
+    {
+
+        "app": "http://zwoptexapp.com",
+        "version": "1.6.0",
+        "image": "coin-spritesheet.png",
+        "size": {"w":256,"h":128},
+        "name": "Untitled 3",
+        "premultipliedAlpha": false,
+        "target": {
+            "name": "default",
+            "textureFileName": "coin-spritesheet",
+            "textureFileExtension": ".png",
+            "coordinatesFileName": "coin-spritesheet-definition",
+            "coordinatesFileExtension": ".json",
+            "premultipliedAlpha": false
+        },
+        "scale": "1"
+
+    }
+
+}

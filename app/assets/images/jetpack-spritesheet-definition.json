@@ -1,0 +1,73 @@
+{
+
+    "frames":
+    [
+        
+        {
+            "filename": "Jetpack-1.png",
+            "frame": {"x":0,"y":0,"w":213,"h":296},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":213,"h":296},
+            "sourceSize": {"w":213,"h":296},
+            "spriteColorRect": {"x":0,"y":0,"w":213,"h":296},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":213, "h":296}
+        },
+        {
+            "filename": "Jetpack-2.png",
+            "frame": {"x":215,"y":0,"w":218,"h":290},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":218,"h":290},
+            "sourceSize": {"w":218,"h":290},
+            "spriteColorRect": {"x":0,"y":0,"w":218,"h":290},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":218, "h":290}
+        },
+        {
+            "filename": "Jetpack-3.png",
+            "frame": {"x":0,"y":298,"w":224,"h":283},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":224,"h":283},
+            "sourceSize": {"w":224,"h":283},
+            "spriteColorRect": {"x":0,"y":0,"w":224,"h":283},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":224, "h":283}
+        },
+        {
+            "filename": "Jetpack-4.png",
+            "frame": {"x":226,"y":298,"w":229,"h":277},
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {"x":0,"y":0,"w":229,"h":277},
+            "sourceSize": {"w":229,"h":277},
+            "spriteColorRect": {"x":0,"y":0,"w":229,"h":277},
+            "spriteOffset": {"x":0, "y":-0},
+            "spriteSize": {"w":229, "h":277}
+        }
+    ],
+
+    "meta":
+    {
+
+        "app": "http://zwoptexapp.com",
+        "version": "1.6.0",
+        "image": "jetpack-spritesheet.png",
+        "size": {"w":512,"h":1024},
+        "name": "Untitled",
+        "premultipliedAlpha": false,
+        "target": {
+            "name": "default",
+            "textureFileName": "jetpack-spritesheet",
+            "textureFileExtension": ".png",
+            "coordinatesFileName": "jetpack-spritesheet-definition",
+            "coordinatesFileExtension": ".json",
+            "premultipliedAlpha": false
+        },
+        "scale": "1"
+
+    }
+
+}

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root :to => 'pages#home'
+  get 'pages/home'
+
   get 'new/games'
 
   get 'new/create'
