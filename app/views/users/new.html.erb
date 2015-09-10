@@ -1,4 +1,4 @@
-<h1>Users#new</h1>
+<h1>Create a New Player</h1>
 
 <% if @user.errors.any? %>
   <ol>
@@ -29,6 +29,6 @@
     <%= f.password_field :password_confirmation %>
   </p>  
 
-  <%= f.submit "Create User" %>
+  <%= f.submit "Create" %>
 <% end %>
 

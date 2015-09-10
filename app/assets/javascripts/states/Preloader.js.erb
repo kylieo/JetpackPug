@@ -11,10 +11,9 @@ JetpackPug.Preloader = function (game) {
 
 JetpackPug.Preloader.prototype = {
 
+// Assets loaded in Boot.js
   preload: function () {
 
-    //  These are the assets we loaded in Boot.js
-    //  A nice logo and a loading progress bar
     this.background = this.add.sprite(this.game.world.centerX, this.game.world.centerY, 'splash');
     this.background.anchor.setTo(0.5, 0.5);
     this.preloadBar = this.add.sprite(this.game.world.centerX, this.game.world.centerY + 128, 'preloaderBar');

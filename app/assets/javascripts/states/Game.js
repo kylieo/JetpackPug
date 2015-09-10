@@ -16,11 +16,13 @@ JetpackPug.Game = function (game) {
   this.spawnX = null;
 };
 
+// This is where the magic happens
+
 JetpackPug.Game.prototype = {
   create: function () {
     
     
-    // set up the game world bounds
+    // set up the width and height of the canvas in pixels
     this.game.world.bounds = new Phaser.Rectangle(0,0, this.game.width + 300, this.game.height);
 
     // start the physics system
@@ -87,7 +89,8 @@ JetpackPug.Game.prototype = {
 
     // instantiate music
     this.music = this.game.add.audio('gameMusic');
-    this.music.play('',0,true);
+    this.music.play('',0,true); 
+    // start game music the moment the game is run (start at beginning and loop)
 
     // instantiate sounds
     this.bounceSound = this.game.add.audio('bounce');
@@ -101,11 +104,12 @@ JetpackPug.Game.prototype = {
       if(this.game.input.activePointer.isDown) {
         this.player.body.velocity.y -= 25;
         if(!this.flapSound.isPlaying) {
-          this.flapSound.play('',0,true);
+          this.flapSound.play('',0,true); 
+          //(marker, start position (0 = beginning), true = loop sound, volume (blank if not changing intensity))
         }
         this.player.animations.play('fly', 16);
       } else {
-        this.flapSound.stop();
+        this.flapSound.stop(); // if player not interacting
       }
 
       if(this.player.body.velocity.y < 0 || this.game.input.activePointer.isDown) {
@@ -259,7 +263,7 @@ JetpackPug.Game.prototype = {
     this.player.alive = false;
     this.player.animations.stop();
     
-    this.music.stop();
+    this.music.stop(); // stop game music if hit an enemy
     this.deathSound.play();
     this.ground.stopScroll();
     this.background.stopScroll();
@@ -284,5 +288,6 @@ JetpackPug.Game.prototype = {
     
   },
   render: function() {
+  // Render function is called after all the sprites have auto-rendered by the game engine
   }
 };
