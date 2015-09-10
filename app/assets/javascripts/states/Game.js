@@ -59,7 +59,7 @@ JetpackPug.Game.prototype = {
 
     
 
-    this.player = this.add.sprite(200, this.game.world.height/2, 'player');
+    this.player = this.add.sprite(200, this.game.world.height/2, 'player_fly');
     this.player.anchor.setTo(0.5);
     this.player.scale.setTo(0.3);
     this.player.animations.add('fly', [0,1,2,3,2,1]);

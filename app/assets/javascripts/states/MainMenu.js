@@ -27,8 +27,8 @@ JetpackPug.MainMenu.prototype = {
     this.player = this.add.sprite(200, this.game.world.height/2, 'player');
     this.player.anchor.setTo(0.5);
     this.player.scale.setTo(0.3);
-    // this.player.animations.add('fly', [0,1,2,3,2,1]);
-    // this.player.animations.play('fly', 8, true);
+    this.player.animations.add('fly', [0,1,2,3,2,1]);
+    this.player.animations.play('fly', 8, true);
     
     this.game.add.tween(this.player).to({y: this.player.y - 16}, 500, Phaser.Easing.Linear.NONE, true, 0, 100, true);
 
