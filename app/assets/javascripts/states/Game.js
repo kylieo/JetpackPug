@@ -11,8 +11,8 @@ JetpackPug.Game = function (game) {
   this.playerMaxAngle = 20;
   this.playerMinAngle = -20;
   this.previousCoinType = null;
-  this.coinSpacingX = 10;
-  this.coinSpacingY = 10;
+  this.foodSpacingX = 10;
+  this.foodSpacingY = 10;
   this.spawnX = null;
 };
 
@@ -100,6 +100,7 @@ JetpackPug.Game.prototype = {
 
   },
   update: function () {
+    // Update is run for every frame of the game, used for checking for collisions, movement or collecting food items
     if(this.player.alive) {
       if(this.game.input.activePointer.isDown) {
         this.player.body.velocity.y -= 25;
