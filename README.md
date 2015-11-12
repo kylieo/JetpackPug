@@ -9,9 +9,9 @@ JetPack Pug is a simple endless runner game demo similar to Flappy Bird. I made 
 Wishlist:
 * Saved high-scores table
 * Several levels that are progressively more difficult
-* animated coins with scoring
-* Food and objects
-* Login screen
+* Animated coins and power ups with scoring
+* Food and objects to collect
+* Styled login/new game screen
 
 [Play the game](https://arcane-bayou-2389.herokuapp.com/)
 
